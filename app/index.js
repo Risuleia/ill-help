@@ -9,13 +9,13 @@ function Home() {
     const router = useRouter()
 
     return(
-        <SafeAreaView>
+        <SafeAreaView style={{ backgroundColor: COLORS.gray }}>
             <Stack.Screen
                 options={{
                     headerStyle: { backgroundColor: COLORS.lightWhite },
                     headerShadowVisible: false,
-                    headerLeft: () => { return <Text>Hi</Text> },
-                    headerTitle: ""
+                    headerLeft: () => { return <Text>I'll help!</Text> },
+                    headerTitle: "",
                 }}
             />
 
