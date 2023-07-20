@@ -3,25 +3,24 @@ import { Text, View, ScrollView, SafeAreaView } from "react-native";
 import { Stack, useRouter } from "expo-router";
 
 import { COLORS, icons, images, SIZES } from "../constants";
+import { Welcome } from "../components";
 
 function Home() {
 
     const router = useRouter()
 
     return(
-        <SafeAreaView style={{ backgroundColor: COLORS.gray }}>
+        <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
             <Stack.Screen
                 options={{
                     headerStyle: { backgroundColor: COLORS.lightWhite },
-                    headerShadowVisible: false,
-                    headerLeft: () => { return <Text>I'll help!</Text> },
-                    headerTitle: "",
+                    headerTitle: "I'll Help",
                 }}
             />
 
             <ScrollView showsHorizontalScrollIndicator={false}>
                 <View style={{ flex: 1, padding: SIZES.medium }}>
-                    <Text>Home</Text>
+                    <Welcome />
                 </View>
             </ScrollView>
 
