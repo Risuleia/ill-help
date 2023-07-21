@@ -4,9 +4,10 @@ import { useRouter } from 'expo-router'
 
 import styles from './welcome.style'
 import Prompt from '../../common/prompt/Prompt'
+import Response from '../../common/response/Response'
 // import { COLORS, icons, SIZES } from '../../../constants'
 
-const Welcome = () => {
+const Welcome = ({ prompt, setPrompt, handleClick }) => {
   const router = useRouter()
 
   const user = 'Risu'
@@ -18,15 +19,13 @@ const Welcome = () => {
         <Text style={styles.welcomeMessage}>Anything you want to talk about?</Text>
       </View>
 
-      <View style={{
-        flex: 1,
-        width: '100%',
-        height: '100%',
-        backgroundColor: 'red'
-      }}>
-      </View>
+      <Response />
 
-      <Prompt />
+      <Prompt
+        prompt={prompt}
+        setPrompt={setPrompt}
+        handleClick={handleClick}
+      />
 
     </View>
   )

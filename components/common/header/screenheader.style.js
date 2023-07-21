@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Platform } from "react-native";
 
 import { COLORS, SIZES } from "../../../constants";
 
@@ -10,6 +10,17 @@ const styles = StyleSheet.create({
     borderRadius: SIZES.small / 1.25,
     justifyContent: "center",
     alignItems: "center",
+    ...Platform.select({
+      android: {
+        marginRight: 0
+      },
+      ios: {
+        marginRight: 0
+      },
+      default: {
+        marginRight: SIZES.xSmall
+      }
+    })
   },
   btnImg: (dimension) => ({
     width: dimension,

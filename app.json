@@ -5,6 +5,14 @@
       "bundler": "metro"
     },
     "name": "ill-help",
-    "slug": "ill-help"
+    "slug": "ill-help",
+    "plugins": [
+      [
+        "react-native-vision-camera",
+        {
+          "cameraPermissionText": "$(PRODUCT_NAME) needs access to your Camera."
+        }
+      ]
+    ]
   }
 }
