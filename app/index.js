@@ -18,7 +18,7 @@ function Home() {
                 }}
             />
 
-            <ScrollView showsHorizontalScrollIndicator={false}>
+            <ScrollView showsHorizontalScrollIndicator={false} contentContainerStyle={{ flex: 1 }}>
                 <View style={{ flex: 1, padding: SIZES.medium }}>
                     <Welcome />
                 </View>
