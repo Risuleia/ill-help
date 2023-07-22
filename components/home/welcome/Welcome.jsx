@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, Text, TextInput, TouchableOpacity, Image } from 'react-native'
+import { View, Text } from 'react-native'
 import { useRouter } from 'expo-router'
 
 import styles from './welcome.style'

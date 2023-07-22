@@ -10,6 +10,7 @@ import chevronLeft from '../assets/icons/chevron-left.png'
 import chevronRight from '../assets/icons/chevron-right.png'
 import videoOn from '../assets/icons/video-on.png'
 import videoOff from '../assets/icons/video-off.png'
+import cameraSwitch from '../assets/icons/camera-switch.png'
 
 export default {
   heart,
@@ -23,5 +24,6 @@ export default {
   chevronLeft,
   chevronRight,
   videoOn,
-  videoOff
+  videoOff,
+  cameraSwitch
 };

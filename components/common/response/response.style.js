@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     responseText: {
         color: COLORS.secondary,
         fontSize: SIZES.medium * 1.1,
-        fontFamily: 'DMMedium'
+        fontFamily: FONT.medium
     }
 })
 

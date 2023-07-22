@@ -8,11 +8,19 @@
     "slug": "ill-help",
     "plugins": [
       [
-        "react-native-vision-camera",
+        "expo-camera",
         {
-          "cameraPermissionText": "$(PRODUCT_NAME) needs access to your Camera."
+          "cameraPermissionText": "$(PRODUCT_NAME) needs access to your camera.",
+          "microphonePermission": "$(PRODUCT_NAME) needs access to your microphone."
         }
       ]
-    ]
+    ],
+    "android": {
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.MICROPHONE"
+      ],
+      "package": "com.anonymous.illhelp"
+    }
   }
 }

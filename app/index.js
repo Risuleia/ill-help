@@ -1,19 +1,17 @@
 import { useState } from "react";
-import { Text, View, ScrollView, SafeAreaView } from "react-native";
+import { View, ScrollView, SafeAreaView } from "react-native";
 import { Stack, useRouter } from "expo-router";
-import { Camera } from "react-native-vision-camera";
+import { Camera, CameraType } from 'expo-camera'
 
-import { COLORS, icons, images, SIZES } from "../constants";
-import { ScreenHeaderBtn, Welcome } from "../components";
+import { COLORS, icons, SIZES } from "../constants";
+import { ScreenHeaderBtn, Welcome, CameraCard } from "../components";
 
-async function Home() {
-
-    const cameraPermission = await Camera.getCameraPermissionStatus()
-    console.log(cameraPermission)
+function Home() {
 
     const router = useRouter()
 
     const [prompt, setPrompt] = useState('')
+    const [turnedOn, setTurnedOn] = useState(false)
 
     return(
         <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
@@ -22,13 +20,17 @@ async function Home() {
                     headerStyle: { backgroundColor: COLORS.lightWhite },
                     headerRight: () => (
                         <ScreenHeaderBtn
-                            iconUrl={icons.videoOff}
+                            iconUrl={turnedOn === false ? icons.videoOff : icons.videoOn}
                             dimension='70%'
-                            handlePress={() => {}}
+                            handlePress={() => setTurnedOn(turnedOn === true ? false : true)}
                         />
                     ),
                     headerTitle: "I'll Help",
                 }}
+            />
+
+            <CameraCard
+                turnedOn={turnedOn}
             />
 
             <ScrollView showsHorizontalScrollIndicator={false} contentContainerStyle={{ flex: 1 }}>

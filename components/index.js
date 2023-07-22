@@ -1,4 +1,5 @@
 import ScreenHeaderBtn from "./common/header/ScreenHeaderBtn";
+import CameraCard from "./common/camera-card/CameraCard";
 
 // home screen
 import Welcome from "./home/welcome/Welcome";
@@ -17,6 +18,7 @@ import NearbyJobCard from "./common/cards/nearby/NearbyJobCard";
 
 export {
   ScreenHeaderBtn,
+  CameraCard,
   Welcome,
   Nearbyjobs,
   Popularjobs,
