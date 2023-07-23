@@ -13,10 +13,10 @@ function Home() {
     const [cameraPermission, requestCameraPermission] = Camera.useCameraPermissions()
     const [audioPermission, requestAudioPermission] = Camera.useMicrophonePermissions()
 
-    // if (!cameraPermission || !audioPermission) {
-    //     requestCameraPermission()
-    //     requestAudioPermission()
-    // }
+    if (!cameraPermission || !audioPermission) {
+        requestCameraPermission()
+        requestAudioPermission()
+    }
     
     const permission = {
         granted: () => {
@@ -48,7 +48,7 @@ function Home() {
                     headerRight: () => (
                         <ScreenHeaderBtn
                             iconUrl={!permission.granted() ? icons.videoOff : (turnedOn === true ? icons.videoOn : icons.videoOff)}
-                            dimension='65%'
+                            dimension={turnedOn === false ? '65%' : '50%'}
                             handlePress={setCamera}
                             state={!permission.granted() ? false : (turnedOn === true ? true : false)}
                         />
