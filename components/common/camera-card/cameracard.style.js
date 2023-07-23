@@ -7,12 +7,14 @@ const styles = StyleSheet.create({
         position: 'absolute',
         borderRadius: SIZES.medium,
         backgroundColor: COLORS.gray,
-        width: 'auto',
-        zIndex: 10,
+        zIndex: 9,
         margin: SIZES.small,
         right: 0,
         top: 0,
-        overflow: 'hidden'
+        overflow: 'hidden',
+        justifyContent: 'center',
+        alignItems: 'center',
+        // aspectRatio: 1
     },
     containerHidden: {
         position: 'absolute',
@@ -20,21 +22,26 @@ const styles = StyleSheet.create({
     },
     camera: {
         maxWidth: 200,
-        width: 400,
-        height: 200
+        width: 150,
+        height: 150,
+        zIndex: 10,
+        position: 'relative'
     },
     toggleBtn: {
-        width: 60,
-        height: 60,
+        width: 40,
+        height: 40,
         flex: 1,
         position: 'absolute',
         left: 0,
         bottom: 0,
-        margin: SIZES.small
+        zIndex: 11,
+        justifyContent: 'center',
+        alignItems: "center",
+        margin: SIZES.xSmall / 2
     },
     toggleBtnImage: {
-        width: '30%',
-        height: '30%',
+        width: '70%',
+        height: '70%',
         tintColor: '#ffffff'
     }
 })

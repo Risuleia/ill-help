@@ -18,9 +18,9 @@ function Prompt({ prompt, setPrompt, handleClick }) {
                 </View>
                 <TouchableOpacity style={styles.searchBtn} onPress={handleClick}>
                     <Image
-                    source={icons.chevronRight}
-                    resizeMode='contain'
-                    style={styles.searchBtnImage}
+                        source={icons.chevronRight}
+                        resizeMode='contain'
+                        style={styles.searchBtnImage}
                     />
                 </TouchableOpacity>
             </View>

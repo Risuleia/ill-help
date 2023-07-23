@@ -3,10 +3,10 @@ import { StyleSheet, Platform } from "react-native";
 import { COLORS, SIZES } from "../../../constants";
 
 const styles = StyleSheet.create({
-  btnContainer: {
+  btnContainer: (state) => ({
     width: 40,
     height: 40,
-    backgroundColor: COLORS.white,
+    backgroundColor: !state ? COLORS.white : COLORS.tertiary,
     borderRadius: SIZES.small / 1.25,
     justifyContent: "center",
     alignItems: "center",
@@ -21,11 +21,12 @@ const styles = StyleSheet.create({
         marginRight: SIZES.xSmall
       }
     })
-  },
-  btnImg: (dimension) => ({
+  }),
+  btnImg: (dimension, state) => ({
     width: dimension,
     height: dimension,
     borderRadius: SIZES.small / 1.25,
+    tintColor: !state ? '#000000' : '#ffffff'
   }),
 });
 
