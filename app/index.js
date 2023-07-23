@@ -48,7 +48,7 @@ function Home() {
                     headerRight: () => (
                         <ScreenHeaderBtn
                             iconUrl={!permission.granted() ? icons.videoOff : (turnedOn === true ? icons.videoOn : icons.videoOff)}
-                            dimension={turnedOn === false ? '65%' : '50%'}
+                            dimension={turnedOn === false ? '65%' : '62%'}
                             handlePress={setCamera}
                             state={!permission.granted() ? false : (turnedOn === true ? true : false)}
                         />
