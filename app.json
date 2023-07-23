@@ -18,9 +18,18 @@
     "android": {
       "permissions": [
         "android.permission.CAMERA",
-        "android.permission.MICROPHONE"
+        "android.permission.MICROPHONE",
+        "android.permission.RECORD_AUDIO"
       ],
       "package": "com.anonymous.illhelp"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "598d8ecc-6a74-4302-ae9b-b2d9845b3dfa"
+      }
+    },
+    "ios": {
+      "bundleIdentifier": "com.anonymous.illhelp"
     }
   }
 }
