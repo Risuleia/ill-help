@@ -1,10 +1,11 @@
+import 'react-native-url-polyfill/auto'
 import { useState } from "react";
 import { View, ScrollView, SafeAreaView } from "react-native";
 import { Stack, useRouter } from "expo-router";
 import { Camera } from "expo-camera";
 
 import { COLORS, icons, SIZES } from "../constants";
-import { ScreenHeaderBtn, Welcome, CameraCard } from "../components";
+import { ScreenHeaderBtn, Welcome } from "../components";
 
 console.reportErrorsAsExceptions = false;
 
@@ -13,10 +14,10 @@ function Home() {
     const [cameraPermission, requestCameraPermission] = Camera.useCameraPermissions()
     const [audioPermission, requestAudioPermission] = Camera.useMicrophonePermissions()
 
-    if (!cameraPermission || !audioPermission) {
-        requestCameraPermission()
-        requestAudioPermission()
-    }
+    // if (!cameraPermission || !audioPermission) {
+    //     requestCameraPermission()
+    //     requestAudioPermission()
+    // }
     
     const permission = {
         granted: () => {
@@ -26,13 +27,9 @@ function Home() {
     
     const router = useRouter()
     
-    const [prompt, setPrompt] = useState('')
     const [turnedOn, setTurnedOn] = useState(false)
-    
-    const showCamera = (permission, turnedOn) => {
-        if (permission.granted() && turnedOn) return <CameraCard />
-    }
-    const setCamera = () => {
+
+    const setupCamera = () => {
         if (!permission.granted()) {
             requestAudioPermission()
             requestCameraPermission()
@@ -49,7 +46,7 @@ function Home() {
                         <ScreenHeaderBtn
                             iconUrl={!permission.granted() ? icons.videoOff : (turnedOn === true ? icons.videoOn : icons.videoOff)}
                             dimension={turnedOn === false ? '65%' : '62%'}
-                            handlePress={setCamera}
+                            handlePress={setupCamera}
                             state={!permission.granted() ? false : (turnedOn === true ? true : false)}
                         />
                     ),
@@ -57,17 +54,16 @@ function Home() {
                 }}
             />
 
-            {showCamera(permission, turnedOn)}
+            {/* {showCamera(permission, turnedOn)} */}
+            <View style={{ flex: 1, padding: SIZES.medium }}>
+                <Welcome
+                    permission={permission}
+                    turnedOn={turnedOn}
+                />
+            </View>
 
-            <ScrollView showsHorizontalScrollIndicator={false} contentContainerStyle={{ flex: 1 }}>
-                <View style={{ flex: 1, padding: SIZES.medium }}>
-                    <Welcome
-                        prompt={prompt}
-                        setPrompt={setPrompt}
-                        handleClick={() => setPrompt('')}
-                    />
-                </View>
-            </ScrollView>
+            {/* <ScrollView showsHorizontalScrollIndicator={false} contentContainerStyle={{ flex: 1 }}>
+            </ScrollView> */}
 
         </SafeAreaView>
     )

@@ -6,19 +6,19 @@ const styles = StyleSheet.create({
         flex: 1,
         width: '100%',
         height: '100%',
-        marginTop: SIZES.small
+        marginTop: SIZES.small,
     },
     responseWrapper: {
         flex: 1,
         borderRadius: SIZES.medium,
         backgroundColor: COLORS.quaternary,
         padding: SIZES.small,
-        justifyContent: 'flex-end'
     },
     responseText: {
-        color: COLORS.secondary,
-        fontSize: SIZES.medium * 1.1,
-        fontFamily: FONT.medium
+        fontSize: SIZES.small * 1.35,
+        fontFamily: FONT.regular,
+        color: COLORS.white,
+        textAlign: 'left'
     }
 })
 
